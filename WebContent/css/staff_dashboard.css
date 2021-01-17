@@ -1,0 +1,12 @@
+.username {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    letter-spacing: 1.2px;
+    word-spacing: 2px;
+    color: #1B9284;
+    font-weight: 700;
+    text-decoration: none;
+    font-variant: normal;
+    text-transform: uppercase;
+}
