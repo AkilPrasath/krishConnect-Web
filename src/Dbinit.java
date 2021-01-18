@@ -4,7 +4,7 @@ public class Dbinit {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/krishconnect-web","root","");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost/krishconnect","root","");
 			
 		}catch(Exception e) {
 			System.out.println(e);
