@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter Details</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/getStudentDetails.css">
+
+    <script type="text/javascript">
+      function request() {
+        var xmlhttprequest = new XMLHttpRequest();
+        xmlhttprequest.onreadystatechange = function next() {
+          if(xmlhttprequest.readyState == 4) {
+            var response = xmlhttprequest.responseText;
+            if(response == "done") {
+              window.location.replace("http://localhost:8080/KrishConnect-Web/menu.html");
+            } 
+          }
+        }
+        var parameter = document.details.registernumber.value + ":" +
+                        document.details.phonenumber.value + ":" +
+                        document.details.department.value + ":" +
+                        document.details.section.value + ":" +
+                        document.details.semester.value + ":" +
+                        document.details.locationprivacy.checked;
+        xmlhttprequest.open("POST", "Setstudentdetails?msg="+parameter, true);
+        xmlhttprequest.send();
+      }
+      
+      
+    </script>
+</head>
+<body>
+  <script type="text/javascript">
+    window.onload = function() {
+        if(window.location.search.split("?").length > 1) {
+          var param = window.location.search.split("?")[1];
+          var uname = param.split("=")[1];
+          document.getElementById("regnum").value = uname;
+        }
+      }
+  </script>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/apple.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      KrishConnect
+    </a>
+  </nav>
+  <div class="dummy1"></div>
+  <div class="mx-auto">
+    <form name="details" style="left: 50%; position: absolute;
+                  top: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
+                  onsubmit="return request()" method="POST">
+      <div class="form-group" style="width: 100%;">
+        <label for="reg">Register Number</label>
+        <input type="text" class="form-control" name="registernumber" value="18eucs000" id="regnum" disabled>
+      </div>
+      <div class="form-group" style="width: 100%;">
+        <label for="phonenumber">Phone Number</label>
+        <input type="text" class="form-control" name="phonenumber" placeholder="0000000000">
+      </div>
+      <div class="form-group" style="width: 100%;">
+        <label for="department">Department</label>
+        <select class="form-control" name="department">
+          <option>Computer Science and Engineering</option>
+          <option>Electrical and Electronics Engineering</option>
+          <option>Electronic and Communication Engineering</option>
+          <option>Information Technology</option>
+          <option>Mechanical Engineering</option>
+          <option>Computer Science and Business Studies</option>
+          <option>Mechatronics Engineering</option>
+          <option>Civil Engineering</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="section">Section</label>
+        <select class="form-control" name="section">
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="semester">Semester</label>
+        <select class="form-control" name="semester">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+        </div>
+        <div class="form-group col-md-2">
+          <input class="form-check-input" type="checkbox" value="" name="locationprivacy">
+            <label class="form-check-label" for="Location">
+              Location Privacy
+            </label>
+        </div>
+      </div>
+      <div align="center">
+        <input type="submit" class="btn btn-info" value="Submit">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

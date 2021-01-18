@@ -14,8 +14,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");  
 	    PrintWriter out = response.getWriter();
-	    String username=request.getParameter("username");  
-	    String password=request.getParameter("password");
+	    String username = request.getParameter("username");  
+	    String password = request.getParameter("password");
 	    if(LoginDao.checkUser(username, password)) {
 	    	RequestDispatcher rd=request.getRequestDispatcher("menu.html");
 //	    	HttpSession s = request.getSession();
