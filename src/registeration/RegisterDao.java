@@ -1,4 +1,7 @@
+package registeration;
 import java.sql.*;
+
+import database.Dbinit;
 
 public class RegisterDao {
 //	static Connection connection;

@@ -1,5 +1,8 @@
+package studentDetails;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
+import database.Dbinit;
 
 public class Set_Student_DetailsDao {
 	public static boolean setDetails(String details) {

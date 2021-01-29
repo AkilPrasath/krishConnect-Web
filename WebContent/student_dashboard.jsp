@@ -4,7 +4,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <link rel="stylesheet" href="css/staff_dashboard.css">
-    <title>Insert title here</title>
+    <title>Student Dashboard</title>
 </head>
 
 <body>
@@ -24,9 +24,14 @@
                 </ul>
             </div>
         </nav>
+        <%@ page import="javax.servlet.*" %>
+        <%
+        	HttpSession currentsession = request.getSession();
+        	String uname = currentsession.getAttribute("username").toString();	
+        %>
         <div class="col-md-6">
             <p style="display: inline-block">Hi,</p>
-            <p class="username">Akil Prasath</p>
+            <p class="username"><%=uname %></p>
         </div>
         <div class="row">
             <div class="col-md-3"></div>
