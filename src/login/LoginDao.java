@@ -1,6 +1,8 @@
+package login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import database.Dbinit;
 
 public class LoginDao {
 	static Connection connection;

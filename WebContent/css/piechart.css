@@ -1,0 +1,12 @@
+.piechart {
+    /* margin-top: 300px; */
+    display: block;
+    /* position: absolute; */
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: conic-gradient( rgb(25, 25, 175) 70deg, rgb(204, 34, 4) 0 235deg, rgb(15, 119, 114) 0);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}

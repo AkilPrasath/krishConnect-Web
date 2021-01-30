@@ -19,7 +19,7 @@ function includeNavbar() {
                     }
                     /* Remove the attribute, and call this function once more: */
                     elmnt.removeAttribute("w3-include-html");
-                    includeHTML();
+                    includeNavbar();
                 }
             }
             xhttp.open("GET", file, true);

@@ -5,11 +5,13 @@ public class Dbinit {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/krishconnect-web","root","");
+			System.out.println("class load success");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost/krishconnect","root","");
 			
 		}catch(Exception e) {
-			System.out.println(e);
-		}
-		return connection;
+			
+			System.out.println("dbinit exception !!!!!!!!"+e);
+		} 
+		return connection; 
 	}
 }

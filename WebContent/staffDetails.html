@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Staff Details</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/getStaffDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            if (window.location.search.split("?").length > 1) {
+                var param = window.location.search.split("?")[1];
+                var uname = param.split("=")[1];
+                document.getElementById("staffname").value = uname;
+            }
+        }
+    </script>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/apple.svg" width="30" height="30" class="d-inline-block align-top" alt=""> KrishConnect
+        </a>
+    </nav>
+    <div class="container one">
+        <div class="mx-auto">
+            <a class="btn btn-success" id="upload">Submit</a>
+            <form name="details">
+                <div class="form-group" style="width: 80%;">
+                    <label for="reg">Name</label>
+                    <input type="text" class="form-control" name="name" value="" id="staffname" disabled>
+                </div>
+                <div class="form-group" style="width: 80%;">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phonenumber" placeholder="0000000000">
+                </div>
+                <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" name="locationprivacy">
+                    <label class="form-check-label" for="Location">
+              Location Privacy
+            </label>
+                </div>
+            </form>
+            <div class="form-group">
+                <button class="btn" id="addtutor"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add Tutor</button>
+            </div>
+            <form name="tutordetails">
+                <div id="tutorDiv" style="display:none ;">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <select class="form-control" id="department_tutor">
+                 
+                <option>select department</option>
+                <option>CSE</option>
+                <option>EEE</option>
+                <option>ECE</option>
+                <option>IT</option>
+                <option>MECH</option>
+                <option>MCT</option>
+                <option>CIVIL</option>
+              </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <select class="form-control" id="section_tutor">
+              <option>select section</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+
+                            <select class="form-control" id="semester_tutor">
+              <option>select semester</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option> 
+              <option>8</option>
+            </select>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+        <div class="container two">
+            <div class="form-group">
+                <button class="btn" id="addsub"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add Subject</button>
+            </div>
+            <div id="subjectDiv">
+
+            </div>
+            <script src="js/staffDetails.js"></script>
+        </div>
+</body>
+
+</html>
